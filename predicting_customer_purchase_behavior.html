@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Project - Vishnu Venugopal</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-1H0BM4VD17">
+		</script>
+		<script>
+  		window.dataLayer = window.dataLayer || [];
+ 		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());0
+ 		gtag('config', 'G-1H0BM4VD17');
+		</script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro">
+						<h1>Predicting Customer Purchase Behavior<h1>
+                        </br><h2>End-to-End ML Project</h2>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
+
+				<!-- Header -->
+					<header id="header">
+						<a href="about.html" class="logo">Project Summary</a>
+					</header>
+
+				<!-- Nav -->
+		<nav id="nav">
+			<ul class="links">
+				
+				<li><a href="projects.html">Return back to Projects</a></li>
+
+			</ul>
+			<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/vishnu-venugopal93/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/venugvis/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Project Summary Section -->
+							<article class="post featured">
+
+                                <p style="text-align: left;">
+                                <i>This is a complete machine learning case study using real-world behavioral data. It covers ETL, EDA, Feature Engineering, Model Training, Hyperparameter Tuning(GridSearchCV), and performance evaluation..                                    
+                                </i>
+                                </p>
+                                </br>
+
+
+                                <h2><u>Data Source:</u></h2>
+                                <p style="text-align: left;">
+                                    The dataset used in this project was publicly available on Kaggle:
+                                </br>
+                                    <strong>Predict Customer purchase Behavior Dataset : 
+                                    <a href="https://www.kaggle.com/datasets/rabieelkharoua/predict-customer-purchase-behavior-dataset">
+                                        Kaggle Dataset by Rabie El Kharoual
+                                    </a>  
+                                    </strong>  
+                                </p>
+            <!-- Phase 1 Summary -->
+                                <h2>
+                                    <u>
+                                    Phase 1: Data Cleaning
+                                    </u>
+                                </h2>
+                                <p>
+                                    I began by importing the raw dataset and understanding its structure. After confirming that there were no missing values, I identified and converted several numerical columns to categorical type (e.g. <i>`gender`, `LoyaltyProgram`, `ProductCategory` and `PurchaseStatus`</i>). 
+                                    Finally, the cleaned dataset was saved for reuse in the future steps.
+                                </br>
+                                <strong>
+                                    Link to ipynb Notebook with visualization: 
+                                    <a 
+                                    href="https://github.com/venugvis/customer-purchase-prediction/blob/main/notebooks/01_data_cleaning.ipynb">
+                                    01_data_cleaning.ipynb
+                                    </a>
+                                </strong>
+                                </p>
+
+                                
+            <!-- Phase 2 Summary -->                                
+                                <h2>
+                                    <u>
+                                        Phase 2: Exploratory Data Analysis (EDA)
+                                    </u>
+                                </h2>
+
+                                <p style="text-align: left;">
+                                    In this phase, I performed univariate and bivariate analysis to explore patterns and relationships in the data.
+                                <h3 style="text-align: left;">
+                                    <u>
+                                        Univariate Analysis
+                                    </u>
+                                </h3>
+                                    <ul style="text-align: left;">
+                                        <li><strong><code>TimeSpentOnWebsite</code>: </strong> Slightly positive trend; peak en engagement near 45 minutes.</li>
+                                        <li><strong><code>AnnualIncome</code> : </strong>Surprisingly balanced; no transformation needed.</li>
+                                        <li><strong><code>NumberOfPurchases</code> : </strong>Spike at 20 suggests a possible system cap.</li>
+                                        <li><strong><code>DiscountsAvailed</code> : </strong>Fairly even distribution across all bins.</li>
+                                        <li><strong><code>Age</code> : </strong>Bimodal pattern with peaks in younger and older ranges.</li>
+                                    </ul>
+                                    <h3 style="text-align: left;">
+                                        <u>
+                                            Bivariate Analysis(vs. `PurchaseStatus`)
+                                        </u>
+                                    </h3>
+                                        <ul style="text-align: left;">
+                                            <li><strong><code>TimeSpentOnWebsite</code> : </strong> Clear increase in median time for purchasers.</li>
+                                            <li><strong><code>AnnualIncome</code> : </strong>Purchasers had notably higher income.</li>
+                                            <li><strong><code>DiscountsAvailed</code> : </strong>Slightly more discounts used by purchasers.</li>
+                                        </ul>
+                                </p>
+                                <p style="text-align: left;">
+
+                                    <strong>
+                                        Link to ipynb Notebook: 
+                                        <a 
+                                        href="https://github.com/venugvis/customer-purchase-prediction/blob/main/notebooks/02_exploratory_data_analysis.ipynb">
+                                        02_exploratory_data_analysis.ipynb
+                                        </a>
+                                    </strong>
+                                </p>
+
+            <!-- Phase 3 Summary -->                   
+                                <h2>
+                                    <u>
+                                        Phase 3: Modeling and Evaluation
+                                    </u>
+                                </h2>
+                                <p style="text-align: left;">
+                                    After preparing the features and encoding categorical variables, I split the dataset and trained a baseline <code>RandomForestClassifier</code><div class=""></div>
+                                </p>
+                                <table>
+                                    <tr>
+                                        <th >Model</th>
+                                        <th>F1-Score</th>
+                                        <th>Accuracy</th>
+                                        <th>Recall</th>
+                                        <th>Precision</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Random Forest (Baseline Model)</td>
+                                        <td>0.90</td>
+                                        <td>0.92</td>
+                                        <td>0.88</td>
+                                        <td>0.93</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Random Forest (Tuned Model)</td>
+                                        <td>0.91</td>
+                                        <td>0.93</td>
+                                        <td>0.88</td>
+                                        <td>0.94</td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    The baseline model acheived(<i>purchase class</i>):
+                                </br>
+                                <ul style="text-align: left;">
+                                    <li><strong><code>F1-Score</code>: </strong>0.90.</li>
+                                    <li><strong><code>Accuracy</code> : </strong>92%.</li>
+                                </ul>
+
+                                <p>
+                                    I then used <code>GridSearchCV</code> to optimize the key hyperparameters such as <code>n_estimators</code>, <code>max_depth</code>, <code>min_samples_split</code>, and <code>min_samples_leaf</code>. 
+                                </br>
+                                The tuned model imporved performance further:
+                                <ul style="text-align: left;">
+                                    <li><strong><code>F1-Score</code>: </strong>0.91.</li>
+                                    <li><strong><code>Accuracy</code> : </strong>93%.</li>
+                                    <li><strong><code>Precision</code> : </strong>0.94</li>
+                                </ul>
+                                </p>
+                                <p style="text-align: left;"> This confirmed that the featrures were meaningful and the model generalized well.</br>
+                                I would consider this version production-ready for business insights or deployment</p>
+
+                                <p style="text-align: left;">
+
+                                    <strong>
+                                        Link to ipynb Notebook: 
+                                        <a 
+                                        href="https://github.com/venugvis/customer-purchase-prediction/blob/main/notebooks/03_modeling_pipeline.ipynb">
+                                        03_modeling_pipeline.ipynb
+                                        </a>
+                                    </strong>
+                                </p>
+                                </p>
+
+
+							</article>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>India</p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto:vishnu.jake93@gmail.com">vishnu.jake93@gmail.com</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="https://www.linkedin.com/in/vishnu-venugopal93/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/venugvis" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://www.kaggle.com/venugvis" class="icon brands alt fa-kaggle"><span class="label">Kaggle</span></a></li>
+									
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Vishnu Venugopal (2025)</li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	</body>
+</html>
